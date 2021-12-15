@@ -1,7 +1,8 @@
 import React from "react";
-import TypeWriter from "react-typewriter";
+import TypeWriterEffect from "react-typewriter-effect";
 
 const Header = ({ data }) => {
+  const myRef = document.querySelector("body");
   if (data) {
     var name = data.name;
     var occupation = data.occupation;
@@ -65,7 +66,15 @@ const Header = ({ data }) => {
       <div className="row banner">
         <div className="banner-text">
           <h1 className="responsive-headline">
-            <TypeWriter typing={0.5}>{name ? `I'm ${name}.` : null}</TypeWriter>
+            {/* <TypeWriter typing={0.5}>{name ? `I'm ${name}.` : null}</TypeWriter> */}
+            <TypeWriterEffect
+              textStyle={{ fontFamily: "Red Hat Display" }}
+              startDelay={100}
+              cursorColor="white"
+              text={name ? `I'm ${name}.` : null}
+              typeSpeed={100}
+              scrollArea={myRef}
+            />
           </h1>
           <h3>
             Based in {city}. <span>{occupation}</span>. {description}.
