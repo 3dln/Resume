@@ -41,21 +41,23 @@ interface ITestimonial {
   user: string;
 }
 
+export interface IUserMain {
+  name: string;
+  occupation: string;
+  description: string;
+  image: string;
+  bio: string;
+  contactmessage: string;
+  email: string;
+  phone: string;
+  address: IAddress;
+  website: string;
+  resumedownload: string;
+  social: ISocial[];
+}
+
 export interface IResume {
-  main: {
-    name: string;
-    occupation: string;
-    description: string;
-    image: string;
-    bio: string;
-    contactmessage: string;
-    email: string;
-    phone: string;
-    address: IAddress;
-    website: string;
-    resumedownload: string;
-    social: ISocial[];
-  };
+  main: IUserMain;
   resume: {
     skillmessage: string;
     education: IEducation[];

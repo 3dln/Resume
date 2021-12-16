@@ -1,10 +1,7 @@
-import React from "react";
-import TypeWriterEffect from "react-typewriter-effect";
+import Navigation from "./Navigation";
 
 const Header = ({ data }) => {
-  //   const myRef = document.querySelector("body");
   if (data) {
-    var name = data.name;
     var occupation = data.occupation;
     var description = data.description;
     var city = data.address.city;
@@ -21,61 +18,10 @@ const Header = ({ data }) => {
 
   return (
     <header id="home">
-      <nav id="nav-wrap">
-        <a className="mobile-btn" href="#nav-wrap" title="Show navigation">
-          Show navigation
-        </a>
-        <a className="mobile-btn" href="#home" title="Hide navigation">
-          Hide navigation
-        </a>
-
-        <ul id="nav" className="nav">
-          <li className="current">
-            <a className="smoothscroll" href="#home">
-              Home
-            </a>
-          </li>
-          <li>
-            <a className="smoothscroll" href="#about">
-              About
-            </a>
-          </li>
-          <li>
-            <a className="smoothscroll" href="#resume">
-              Resume
-            </a>
-          </li>
-          <li>
-            <a className="smoothscroll" href="#portfolio">
-              Works
-            </a>
-          </li>
-          <li>
-            <a className="smoothscroll" href="#testimonials">
-              Testimonials
-            </a>
-          </li>
-          <li>
-            <a className="smoothscroll" href="#contact">
-              Contact
-            </a>
-          </li>
-        </ul>
-      </nav>
-
+      <Navigation />
       <div className="row banner">
         <div className="banner-text">
-          <h1 className="responsive-headline">
-            {/* <TypeWriter typing={0.5}>{name ? `I'm ${name}.` : null}</TypeWriter> */}
-            {/* <TypeWriterEffect
-              textStyle={{ fontFamily: "Red Hat Display" }}
-              startDelay={100}
-              cursorColor="white"
-              text={name ? `I'm ${name}.` : null}
-              typeSpeed={100}
-              scrollArea={myRef}
-            /> */}
-          </h1>
+          <h1 className="responsive-headline">{data.name}</h1>
           <h3>
             Based in {city}. <span>{occupation}</span>. {description}.
           </h3>
